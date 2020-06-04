@@ -6,7 +6,8 @@ def ubicando_variables():
         for columna in  range(len(matriz[fila])):
             #print('{},{}'.format(fila, columna))
             if matriz[fila][columna] == '0':
-                print('{},{}'.format(fila, columna))
+                print('{},{} = {}'.format(fila, columna))
+                #print('{},{} = {}'.format(fila, columna,matriz[fila][columna]))
             else:
                 #print(matriz[fila][columna])
                 pass
