@@ -10,4 +10,7 @@ def abre_archivo2(archivo):
 '''
 def abre_archivo(archivo):
 	return [[elemento for elemento in x if(elemento!='\n' and elemento!=' ')]for x in open(archivo,"r").readlines() ]
+
 #print(abre_archivo())
+
+

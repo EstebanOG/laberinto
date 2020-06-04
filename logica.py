@@ -1,5 +1,5 @@
 from laberinto import *
-
+from busqueda import *
 '''
 def ubicando_variables():
     matriz = abre_archivo("matriz.txt")
@@ -16,7 +16,7 @@ def ubicando_variables():
 
 
 
-def ubicando_variables2():
+def ubicando_variables():
     matriz = abre_archivo("matriz.txt")
     for fila in range(len(matriz)):
         for columna in  range(len(matriz[fila])):
@@ -27,7 +27,5 @@ def ubicando_variables2():
             else:
                 #print(matriz[fila][columna])
                 pass
-    posiciónX = lambda x: [x.index("x") for x in matriz[x][x]]
-    print(posiciónX)
 
-ubicando_variables2()
+    print('La ubicación de X es: {}'.format(buscar_en_matriz(matriz,0)))

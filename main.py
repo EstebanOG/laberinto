@@ -1,4 +1,4 @@
-
+from logica import *
 
 if __name__ == "__main__":
-    pass
+    ubicando_variables()
