@@ -7,32 +7,44 @@ def buscar_en_matriz(matriz,cont):
 
 def abre_archivo():
 	return [[elemento for elemento in x if(elemento!='\n' and elemento!=' ')]for x in open("matriz.txt","r").readlines() ]
-def verificar(mapa,jugador):
-    pass
 def recorrer(mapa, jugador):
     print(mapa)
-    print(jugador)
-    
-    if jugador[1] != len(mapa[0])-1 and mapa[jugador[0]][jugador[1]+1] == "0":
-        print("derecha")
+    if jugador[1] != len(mapa[0])-1 and mapa[jugador[0]][jugador[1]+1] == "Y":
+        mapa[jugador[0]][jugador[1]] = "0"
+        mapa[jugador[0]][jugador[1]+1] = "Y"
+        jugador[1] = jugador[1]+1
+        return jugador
+    elif mapa[jugador[0]-1][jugador[1]] == "Y":
+        mapa[jugador[0]][jugador[1]] = "0"
+        mapa[jugador[0]-1][jugador[1]] = "Y"
+        jugador[0] = jugador[0]-1
+        return jugador
+    elif mapa[jugador[0]][jugador[1]-1] == "Y":
+        mapa[jugador[0]][jugador[1]] = "0"
+        mapa[jugador[0]][jugador[1]-1] = "Y"
+        jugador[1] = jugador[0]-1
+        return jugador
+    elif mapa[jugador[0]][jugador[1]] == "Y":
+        mapa[jugador[0]][jugador[1]] = "0"
+        mapa[jugador[0]+1][jugador[1]] = "Y"
+        jugador[0] = jugador[0]+1
+        return jugador
+    elif jugador[1] != len(mapa[0])-1 and mapa[jugador[0]][jugador[1]+1] == "0":
         mapa[jugador[0]][jugador[1]] = "0"
         mapa[jugador[0]][jugador[1]+1] = "X"
         jugador[1] = jugador[1]+1
         return recorrer(mapa, jugador)
     elif mapa[jugador[0]-1][jugador[1]] == "0":
-        print("arriba")
         mapa[jugador[0]][jugador[1]] = "0"
         mapa[jugador[0]-1][jugador[1]] = "X"
         jugador[0] = jugador[0]-1
         return recorrer(mapa, jugador)
-    elif mapa[jugador[0]][jugador[1]-1] == "0":
-        print("Izquierda")
+    elif jugador[1] != 0 and mapa[jugador[0]][jugador[1]-1] == "0":
         mapa[jugador[0]][jugador[1]] = "0"
         mapa[jugador[0]][jugador[1]-1] = "X"
         jugador[1] = jugador[0]-1
         return recorrer(mapa, jugador)
     elif mapa[jugador[0]][jugador[1]] == "0":
-        print("abajo")
         mapa[jugador[0]][jugador[1]] = "0"
         mapa[jugador[0]+1][jugador[1]] = "X"
         jugador[0] = jugador[0]+1
