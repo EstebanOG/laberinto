@@ -7,31 +7,30 @@ def buscar_en_matriz(matriz,cont):
 
 def abre_archivo():
 	return [[elemento for elemento in x if(elemento!='\n' and elemento!=' ')]for x in open("matriz.txt","r").readlines() ]
+
+def verificar(mapa, jugador):
+    if  mapa[jugador[0]][jugador[1]+1] == "Y":
+        jugador[1] = jugador[1]+1
+        return jugador
+    elif mapa[jugador[0]-1][jugador[1]] == "Y":
+        jugador[0] = jugador[0]-1
+        return jugador
+    elif mapa[jugador[0]][jugador[1]-1] == "Y":
+        jugador[1] = jugador[1]-1
+        return jugador
+    elif mapa[jugador[0]][jugador[1]] == "Y":
+        jugador[0] = jugador[0]+1
+        return jugador
+    else:
+        return False
+
 def recorrer(mapa, jugador,camino,jugador_anterior):
     #print(mapa)
     print(jugador)
     print(jugador_anterior)
     print("--")
-    if jugador[1] != len(mapa[0])-1 and mapa[jugador[0]][jugador[1]+1] == "Y":
-        mapa[jugador[0]][jugador[1]] = "0"
-        mapa[jugador[0]][jugador[1]+1] = "Y"
-        jugador[1] = jugador[1]+1
-        return camino+jugador
-    elif mapa[jugador[0]-1][jugador[1]] == "Y":
-        mapa[jugador[0]][jugador[1]] = "0"
-        mapa[jugador[0]-1][jugador[1]] = "Y"
-        jugador[0] = jugador[0]-1
-        return camino+jugador
-    elif mapa[jugador[0]][jugador[1]-1] == "Y":
-        mapa[jugador[0]][jugador[1]] = "0"
-        mapa[jugador[0]][jugador[1]-1] = "Y"
-        jugador[1] = jugador[1]-1
-        return camino+jugador
-    elif mapa[jugador[0]][jugador[1]] == "Y":
-        mapa[jugador[0]][jugador[1]] = "0"
-        mapa[jugador[0]+1][jugador[1]] = "Y"
-        jugador[0] = jugador[0]+1
-        return camino+jugador
+    if verificar(mapa,jugador) != False:
+        return jugador
     elif mapa[jugador[0]][jugador[1]+1] == "0":
         mapa[jugador[0]][jugador[1]] = "-"
         mapa[jugador[0]][jugador[1]+1] = "X"
