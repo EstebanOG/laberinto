@@ -3,15 +3,6 @@
 ##### Modelos de programación II - G.020-82
 
 
-
-
-
-# Ejercicio 4: 
-## Implementación Funciones Lambda
-### Función Lambda con recursividad [Sucesión de Fibonacci, Factorial]
-##### Modelos de programación II - G.020-82
-
-
 #### Descripción
 
 _Programa desarrollado para resolver un laberinto dado en una matriz en un archivo de texto de un punto X a un punto Y dentro de la matriz_
@@ -20,7 +11,7 @@ Se hace uso de inteligencia artificial clásica, ilustrado en el siguiente gráf
 
 Image:
 
-![](https://github.com/FelipeH22/laberinto/assets/esquema.jpg)
+![](https://github.com/FelipeH22/laberinto/blob/master/assets/esquema.jpg)
 
 
 Ejemplo:
