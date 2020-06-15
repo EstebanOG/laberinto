@@ -17,7 +17,7 @@ def ubicando_variables():
 
 
 def ubicando_variables():
-    matriz = abre_archivo("matriz.txt")
+    matriz = (lambda x: abre_archivo2(x))("laberinto.txt")
     for fila in range(len(matriz)):
         for columna in  range(len(matriz[fila])):
             #print('{},{}'.format(fila, columna))

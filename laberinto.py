@@ -7,6 +7,11 @@ def buscar_en_matriz(matriz,cont):
 
 def abre_archivo():
 	return [[elemento for elemento in x if(elemento!='\n' and elemento!=' ')]for x in open("matriz.txt","r").readlines() ]
+
+def abre_archivo2(matriz):
+	return [[elemento for elemento in x if(elemento!='\n' and elemento!=' ')]for x in open(matriz,"r").readlines() ]
+
+
 def recorrer(mapa, jugador):
     print(mapa)
     if jugador[1] != len(mapa[0])-1 and mapa[jugador[0]][jugador[1]+1] == "Y":
@@ -51,5 +56,5 @@ def recorrer(mapa, jugador):
         return recorrer(mapa, jugador)
     
 
-print(recorrer(abre_archivo(),buscar_en_matriz(abre_archivo(),0)))
+#print(recorrer(abre_archivo(),buscar_en_matriz(abre_archivo(),0)))
 
