@@ -62,7 +62,7 @@ La función principal:
 
 #### Ejecutar proyecto
 ```
-~$ python main.py
+~$ python laberinto.py
 ```
 
 
