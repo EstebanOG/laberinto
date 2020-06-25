@@ -7,6 +7,11 @@
 
 _Programa desarrollado para resolver un laberinto dado en una matriz en un archivo de texto de un punto X a un punto Y dentro de la matriz_
 
+Se hace uso de inteligencia artificial clásica, ilustrado en el siguiente gráfico:
+
+Image:
+
+![](https://github.com/FelipeH22/laberinto/blob/master/assets/esquema.jpg)
 
 
 Ejemplo:
@@ -23,7 +28,7 @@ def abre_archivo(archivo_txt):
 def buscar_en_matriz(matriz,cont):
     if matriz == []:
         return (-1,-1)
-    if "X" in matriz[0]:
+    if "X" in matriz[0]: 
         return (cont,matriz[0].index("X"))
     return buscar_en_matriz(matriz[1:],cont+1)
 
@@ -62,7 +67,7 @@ La función principal:
 
 #### Ejecutar proyecto
 ```
-~$ python laberinto.py
+~$ python main.py
 ```
 
 
